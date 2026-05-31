@@ -51,6 +51,18 @@ app → pages → widgets → features → entities → shared
 | **widgets** | композиция features |
 | **pages** | композиция widgets |
 
+## Деплой (GitHub Pages)
+
+Сайт: https://some-yummy-nick.github.io/effector-explain/
+
+При пуше в `main` GitHub Actions автоматически собирает и публикует проект.
+
+```bash
+npm run build
+# для локальной проверки production-сборки с base path GitHub Pages:
+GITHUB_PAGES=true npm run build && npm run preview
+```
+
 ## Полезные ссылки
 
 - [Документация Effector](https://effector.dev)

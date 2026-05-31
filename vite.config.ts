@@ -2,8 +2,11 @@ import path from 'node:path'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+const repoBase = '/effector-explain/'
+
 // https://vite.dev/config/
 export default defineConfig({
+  base: process.env.GITHUB_PAGES ? repoBase : '/',
   plugins: [react()],
   resolve: {
     alias: {
