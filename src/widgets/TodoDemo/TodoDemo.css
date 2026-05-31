@@ -1,0 +1,99 @@
+.todo-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.todo-demo__form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.todo-demo__input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.todo-demo__submit {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.todo-demo__filters {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.todo-demo__filter {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.todo-demo__filter_active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.todo-demo__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.todo-demo__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.todo-demo__label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.todo-demo__text_done {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.todo-demo__remove {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.todo-demo__remove:hover {
+  color: #e74c3c;
+}
+
+.todo-demo__empty {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.todo-demo__stats {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
