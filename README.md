@@ -1,6 +1,6 @@
-# Effector + React — обучающий проект
+# Effector + React — обучающий проект (FSD)
 
-Интерактивное руководство по [Effector](https://effector.dev) с React и TypeScript.
+Интерактивное руководство по [Effector](https://effector.dev) с React, TypeScript и [Feature-Sliced Design](https://feature-sliced.design).
 
 ## Запуск
 
@@ -9,30 +9,49 @@ npm install
 npm run dev
 ```
 
-## Структура
+## Структура (FSD)
 
 ```
 src/
-├── model/          # Бизнес-логика (stores, events, effects)
-│   ├── counter/    # Store, Event, .map()
-│   ├── todo/       # combine, CRUD
-│   └── user/       # createEffect, sample
-├── widgets/        # UI-компоненты (демо)
-└── shared/ui/      # Переиспользуемые UI-блоки
+├── app/                    # Инициализация приложения, глобальные стили
+├── pages/home/             # Главная страница
+├── widgets/                # Композитные блоки (демо-секции)
+│   ├── counter-demo/
+│   ├── todo-demo/
+│   └── user-demo/
+├── features/               # Пользовательские действия
+│   ├── counter-controls/
+│   ├── todo-form/
+│   ├── todo-filter/
+│   ├── todo-list/
+│   └── user-loader/
+├── entities/               # Бизнес-сущности + Effector-модели
+│   ├── counter/model/
+│   ├── todo/model/ + ui/TodoItem
+│   └── user/model/ + ui/UserCard
+└── shared/                 # Переиспользуемый код
+    ├── ui/section/
+    └── config/sections.ts
 ```
 
-## Ключевые концепции
+## Правила импортов FSD
 
-| Концепция | Описание |
-|-----------|----------|
-| **Store** (`$name`) | Реактивное хранилище состояния |
-| **Event** | Сигнал о намерении изменить состояние |
-| **Effect** | Асинхронная операция (API, таймеры) |
-| **sample** | Декларативная связь между units |
-| **combine** | Объединение нескольких stores |
-| **useUnit** | Хук для подключения stores/events к React |
+Слой может импортировать только из слоёв **ниже**:
+
+```
+app → pages → widgets → features → entities → shared
+```
+
+## Effector в FSD
+
+| Слой | Что хранит |
+|------|------------|
+| **entities** | stores, events, effects сущности |
+| **features** | UI + `useUnit` для действий пользователя |
+| **widgets** | композиция features |
+| **pages** | композиция widgets |
 
 ## Полезные ссылки
 
 - [Документация Effector](https://effector.dev)
-- [effector-react API](https://effector.dev/en/api/effector-react/)
+- [Feature-Sliced Design](https://feature-sliced.design)
