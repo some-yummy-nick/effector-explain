@@ -1,3 +1,5 @@
+[Example](https://some-yummy-nick.github.io/effector-explain)
+
 # Effector + React — обучающий проект (FSD)
 
 Интерактивное руководство по [Effector](https://effector.dev) с React, TypeScript и [Feature-Sliced Design](https://feature-sliced.design).
